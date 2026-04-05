@@ -1,0 +1,5 @@
+{
+  "slug": "openclaw-odoo-safe",
+  "version": "1.0.0",
+  "description": "Safe edition of the Odoo ERP connector — no webhook server, no background polling, all destructive operations require explicit user confirmation"
+}
