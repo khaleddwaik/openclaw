@@ -192,9 +192,12 @@ class OdooAPI:
         return self.execute(model, "read", [ids], kwargs)
 
     def create(self, model, values):
+        # Ensure values is a list of dictionaries
         if not isinstance(values, list):
             values = [values]
-        return self.execute(model, "create", values)
+            
+        # VERY IMPORTANT: Wrap 'values' in another list so it becomes the FIRST positional argument!
+        return self.execute(model, "create", [values])
 
     def write(self, model, ids, values):
         if isinstance(ids, int):
